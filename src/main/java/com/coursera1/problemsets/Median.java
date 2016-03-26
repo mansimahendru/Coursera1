@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 
 /**
  * Created by mamahendru on 3/14/16.
@@ -12,8 +13,10 @@ public class Median {
     static Heap minHeap = new Heap();
     static Heap maxHeap = new Heap(false);
     static int size = 0;
+    private static String absPath;
 
     public static void main(String[] args){
+        absPath = new File("").getAbsolutePath();
         int median = 0;
         long sum = 0;
 
@@ -39,7 +42,7 @@ public class Median {
 
 
         try {
-            BufferedReader in = new BufferedReader(new FileReader("Median.txt"));
+            BufferedReader in = new BufferedReader(new FileReader(absPath + "/src/main/resources/Median.txt"));
             String str;
             while ((str = in.readLine()) != null) {
                 int number = Integer.parseInt(str.trim());

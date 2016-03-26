@@ -3,13 +3,16 @@ package com.coursera1.problemsets;
 import java.io.*;
 
 public class QuickSort {
-	public static void main(String[] args) {
+    private static String absPath;
+	public static void main(String[] args) throws Exception{
+        absPath = new File("").getAbsolutePath();
 		//int[] array = {3,1,8,2,5,10,4,7,9,6};
 		int[] array = null;
 		try{
-			array = getArray("numbers2.txt");
+			array = getArray(absPath + "/src/main/resources/numbers2.txt");
 		}
 		catch(Exception ex){
+            throw ex;
 		}
 		int[] count = {0};
 		QuickSort qsort = new QuickSort();

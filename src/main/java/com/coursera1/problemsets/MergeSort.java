@@ -3,13 +3,16 @@ package com.coursera1.problemsets;
 import java.io.*;
 
 public class MergeSort {
-	public static void main(String[] args) {
+    private static String absPath;
+	public static void main(String[] args) throws Exception{
+        absPath = new File("").getAbsolutePath();
 		MergeSort mergesort = new MergeSort();
 		int[] array = null;
 		try{
-			array = getArray("numbers_orig.txt");
+			array = getArray(absPath + "/src/main/resources/numbers_orig.txt");
 		}
 		catch(Exception ex){
+            throw ex;
 		}
 		long[] count = {0L};
 		int[] sortedarray = mergesort.sort(array, count);

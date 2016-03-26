@@ -3,14 +3,17 @@ package com.coursera1.problemsets;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
+import java.io.File;
 
 /**
  * Created by mamahendru on 3/4/16.
  */
 public class SCC {
+    private static String absPath;
     private static Stack<Node> stack = new Stack<Node>();
 
     public static void main(String[] args) {
+        absPath = new File("").getAbsolutePath();
         List<Node> list = null;
         try {
             list = getNodeList();
@@ -51,7 +54,7 @@ public class SCC {
     private static List<Node> getNodeList() throws Exception{
         Map<String, Node> nodeMap = new HashMap<String, Node>();
         List<Node> list = new ArrayList<Node>();
-        BufferedReader in = new BufferedReader(new FileReader("scc.txt"));
+        BufferedReader in = new BufferedReader(new FileReader(absPath + "/src/main/resources/scc.txt"));
         String str;
         while((str = in.readLine()) != null){
             String[] result = str.split("\\s");

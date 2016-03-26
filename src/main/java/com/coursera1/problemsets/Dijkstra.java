@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.io.File;
 
 /**
  * Created by mamahendru on 3/7/16.
@@ -18,9 +19,10 @@ public class Dijkstra {
     static Map<String, Integer> visited = new HashMap<String, Integer>();
     static Map<String, Integer> unvisited = new HashMap<String, Integer>();
     static Map<String, Node> list = new HashMap<String, Node>();
+    private static String absPath;
 
     public static void main(String[] args) {
-
+        absPath = new File("").getAbsolutePath();
 
         Node a = new Node("A");
         Node b = new Node("B");
@@ -113,7 +115,7 @@ public class Dijkstra {
     }
 
     private static void getNodeList() throws Exception{
-        BufferedReader in = new BufferedReader(new FileReader("dijkstraData.txt"));
+        BufferedReader in = new BufferedReader(new FileReader(absPath + "/src/main/resources/dijkstraData.txt"));
         String str;
         while((str = in.readLine()) != null){
             String[] result = str.split("\\s");

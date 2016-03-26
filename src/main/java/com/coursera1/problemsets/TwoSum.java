@@ -4,12 +4,15 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.File;
 
 /**
  * Created by mamahendru on 3/14/16.
  */
 public class TwoSum {
+    private static String absPath;
     public static void main(String[] args){
+        absPath = new File("").getAbsolutePath();
         Map<Long, Long> numbers = null;
 
         try{
@@ -37,7 +40,7 @@ public class TwoSum {
 
     private static Map<Long, Long> getNodeList() throws Exception{
         Map<Long, Long> nodeList = new HashMap<Long, Long>();
-        BufferedReader in = new BufferedReader(new FileReader("algo1-programming_prob-2sum.txt"));
+        BufferedReader in = new BufferedReader(new FileReader(absPath + "/src/main/resources/algo1-programming_prob-2sum.txt"));
         String str;
         while((str = in.readLine()) != null){
             Long val = Long.parseLong(str);

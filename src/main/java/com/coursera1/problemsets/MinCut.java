@@ -7,7 +7,9 @@ import java.io.*;
  * Created by mamahendru on 2/29/16.
  */
 public class MinCut {
+    private static String absPath;
     public static void main(String[] args) throws Exception{
+        absPath = new File("").getAbsolutePath();
         List<Node> nodeList = getNodeList();
 
         int least = 0;
@@ -38,7 +40,7 @@ public class MinCut {
 
     private static List<Node> getNodeList() throws Exception{
         List<Node> nodeList = new ArrayList<Node>();
-        BufferedReader in = new BufferedReader(new FileReader("problem3.txt"));
+        BufferedReader in = new BufferedReader(new FileReader(absPath + "/src/main/resources/problem3.txt"));
         String str;
         while((str = in.readLine()) != null){
             String[] result = str.split("\\s");
